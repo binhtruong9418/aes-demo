@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import aesjs from "aes-js";
 import FileSaver from "file-saver";
 import CryptoJS from "crypto-js";
+import { getCipherKey } from "./services/cypher";
 
 const App = () => {
     const [file, setFile] = useState(null);
@@ -125,6 +126,13 @@ const App = () => {
                     </button>
                 </div>
             )}
+
+            <div>
+                <h2>DEMO</h2>
+                <button onClick={() =>{
+                    getCipherKey('123456', 'f23a0543128bdcf38ff3aede19307e836d8e07aa1d62a4fb03a5cf7ed3886a4b685b293ce6aed9dc53c7b6aa8f92c946')
+                }}>click</button>
+            </div>
         </div>
     );
 };
